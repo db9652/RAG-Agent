@@ -1,0 +1,15 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+.env
+
+# Streamlit/App Data
+frontend/chats/
+
+# Docker (if you ever map local volumes)
+n8n_data/
+qdrant_data/
+
+# OS
+.DS_Store
