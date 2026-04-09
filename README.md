@@ -11,6 +11,55 @@ This project is a complete, full-stack Retrieval-Augmented Generation (RAG) appl
 
 ---
 
+## 🚀 Quick Start
+
+1. **Start the Backend (Docker):**
+   ```bash
+   docker-compose up -d
+   ```
+2. **Start the Frontend (Python):**
+   ```bash
+   source /home/white/ai/venv/bin/activate
+   streamlit run frontend/app.py
+   ```
+
+## 🌐 Service Access
+
+| Service | URL | Purpose |
+| :--- | :--- | :--- |
+| **Frontend UI** | `http://localhost:8501` | Main user interface |
+| **n8n Dashboard** | `http://localhost:5678` | Workflow management |
+| **Qdrant Dashboard** | `http://localhost:6333` | Vector database explorer |
+
+## 🏗️ Project Structure
+
+```text
+.
+├── frontend/             # Streamlit application
+│   ├── app.py            # Main entry point
+│   └── chats/            # Local chat history storage
+├── n8n-workflows/        # JSON exports of n8n pipelines
+├── docker-compose.yml     # Container infrastructure
+├── plan.md                # Development Roadmap
+└── README.md              # Project documentation
+```
+
+## 🛠️ Setup & Prerequisites
+
+### 1. Requirements
+- Docker & Docker Compose
+- Python 3.10+
+- Google Gemini API Key
+
+### 2. Workflow Setup
+To initialize the backend logic, you must import the workflow files located in `n8n-workflows/` into your local n8n instance:
+1. Open n8n at `http://localhost:5678`.
+2. Go to **Workflows** -> **Import from File**.
+3. Import `RAG_ Document Ingestion.json` and `RAG_ Chat Agent.json`.
+4. Ensure you configure your Gemini API credentials within the n8n nodes.
+
+---
+
 ## How it was Built (Architecture)
 
 ### 1. Infrastructure Setup
